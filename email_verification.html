@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SecureTrans</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+          .navbar-brand img{
+            width: 50px;
+            height: 50px;
+          }
+          .nav-link{
+            margin: 0 20px;
+          }
+          body{
+            background-color: rgb(222, 231, 247);
+          }
+          .login_details{
+            text-align: center;
+          }
+          .nav-link.active {
+            background-color: #ffc0cb;
+            color: #000;
+            border-radius: 20px;
+            padding: 5px 15px;
+            text-align: center;
+          }
+        </style>
+      </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="images/logo.png"><b>SecureTrans</b></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="index.html">Home</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="exchange_rate1.html">Exchange Rate</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="service1.html">Service</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link text-dark" href="contact1.html">ContactUs</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link text-dark active" href="login.html">Login</a>
+                  </li> 
+                  
+                </ul>
+              </div>
+            </div>
+        </nav><br><br>
+
+        <div class="login_details">
+            <h1>Email Verification</h1>
+            <form id="verification-form">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+                <button type="submit" id="ebtn">Verify</button><br><br>
+
+                <div id="message"></div>
+
+                <label for="email">Enter Verification Code:</label>
+                <input type="text" id="code" name="code">
+                <button type="submit" id="cbtn">Verify</button>
+            </form>
+        </div>
+        <script>
+            const verifyBtn = document.getElementById('ebtn');
+            const verificationMessage = document.getElementById('message');
+            const verifyCodeBtn = document.getElementById('cbtn');
+        
+            verifyBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                verificationMessage.innerHTML = 'Sending a verification code...';
+            });
+
+            verifyCodeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                verificationMessage.innerHTML = 'Verification successful!';
+                window.location.href = 'homepage.html';
+            });
+
+            
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>

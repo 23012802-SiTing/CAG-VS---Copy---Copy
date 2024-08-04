@@ -1,0 +1,72 @@
+.navbar-brand img{
+    width: 50px;
+    height: 50px;
+}
+.nav-link{
+    margin: 0 40px;
+}
+
+/* homepage.html */
+#details{
+    text-align: center;
+}
+#details p{
+    font-size: 18px;
+}
+body{
+    background-color: rgb(222, 231, 247);
+}
+.img1 {
+    float: left;
+    width: 90px;
+    height: 80px;
+}
+.img2 {
+    float: right;
+    width: 90px;
+    height: 80px;
+}
+.sbtn{
+    background-color: rgb(155, 156, 218);
+    border:5px;
+}
+
+/* service.html */
+#service h2{
+    text-align: center;
+}
+.box img{
+    width: 180px;
+    height: 170px;
+    margin-left: 20px;
+}
+
+/* digitalwallet.html */
+
+
+/* contact.html */
+.contact{
+    text-align: center;
+}
+div p{
+    font-size: 18px;
+}
+.feature-title{
+    color: rgb(101, 101, 239);
+    text-decoration:underline;
+}
+
+
+/* transfer.html */
+
+
+/* history.html */
+
+
+/* login.html */
+.login_details{
+    text-align: center;
+}
+.register_details{
+    text-align: center;
+}

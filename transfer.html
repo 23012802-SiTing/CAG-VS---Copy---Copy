@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureTrans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand img {
+            width: 50px;
+            height: 50px;
+        }
+        .nav-link {
+            margin: 0 20px;
+        }
+        body {
+            background-color: rgb(222, 231, 247);
+        }
+        .trans-details {
+            text-align: center;
+        }
+        .nav-link.active {
+            background-color: #ffc0cb;
+            color: #000;
+            border-radius: 20px;
+            padding: 5px 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="images/logo.png"><b>SecureTrans</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="homepage.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="exchange_rate.html">Exchange Rate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="service.html">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="digitalwallet.html">Digital Wallet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" href="transfer.html">Transfer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="history.html">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav><br>
+
+    <div class="trans-details">
+        <h1>Transfer details</h1> <br>
+        <form action="amount_trans.html" id="trans-form">
+            <h2>Sender:</h2><br>
+            <label for="sender-fullname">Full Name:</label>
+            <input type="text" id="sender-fullname" name="sender-fullname" required><br><br>
+
+            <label for="sender-email">Email:</label>
+            <input type="email" id="sender-email" name="sender-email" required><br><br>
+
+            <h2>Receiver:</h2><br>
+            <label for="receiver-accnumber">Account Number:</label>
+            <input type="text" id="receiver-accnumber" name="receiver-accnumber" required><br><br>
+
+            <label for="receiver-fullname">Full Name:</label>
+            <input type="text" id="receiver-fullname" name="receiver-fullname" required><br><br>
+
+            <label for="receiver-email">Email:</label>
+            <input type="email" id="receiver-email" name="receiver-email" required><br><br>
+
+            <label for="receiver-phonenumber">Phone Number:</label>
+            <input type="text" id="receiver-phonenumber" name="receiver-phonenumber" required><br><br>
+
+            <button type="submit" class="btn btn-primary">Confirm</button><br><br>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("trans-form").addEventListener("submit", function(event) {
+
+            const senderFullname = document.getElementById("sender-fullname").value;
+            const senderEmail = document.getElementById("sender-email").value;
+            const receiverAccNumber = document.getElementById("receiver-accnumber").value;
+            const receiverFullname = document.getElementById("receiver-fullname").value;
+            const receiverEmail = document.getElementById("receiver-email").value;
+            const receiverPhonenumber = document.getElementById("receiver-phonenumber").value;
+
+            const queryString = new URLSearchParams({
+                senderFullname,
+                senderEmail,
+                receiverAccNumber,
+                receiverFullname,
+                receiverEmail,
+                receiverPhonenumber
+            }).toString();
+
+            window.location.href = "confirm_trans.html?" + queryString;
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
