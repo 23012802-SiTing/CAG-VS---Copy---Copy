@@ -19,11 +19,6 @@
         .trans-details {
             text-align: center;
         }
-        .img1 {
-          float: left;
-          width: 90px;
-          height: 90px;
-      }
         .nav-link.active {
             background-color: #ffc0cb;
             color: #000;
@@ -72,10 +67,64 @@
     </nav><br><br>
 
     <div class="trans-details">
-        <h1><img class="img1" src="images/successful.png" alt="High Security">Transaction Successfully made!</h1><br><br>
+        <h1>Transaction Successfully made!</h1><br><br>
         <div class="trans-details">
+            <h1>Transfer</h1><br><br>
+            <form action="amount_trans.html" method="get">
+                <label for="ID">Tracking ID:</label>
+                <input type="text" id="ID" name="ID" readonly><br><br>
 
+                <label for="sender_name">Sender Name:</label>
+                <input type="text" id="sender_name" name="sender_name" readonly><br><br>
+
+                <label for="sender_email">Sender Email:</label>
+                <input type="text" id="sender_email" name="sender_email" readonly><br><br>
+
+                <label for="receiver_accnumber">Receiver Account Number:</label>
+                <input type="text" id="receiver_accnumber" name="receiver_accnumber" readonly><br><br>
+
+                <label for="receiver_name">Receiver Name:</label>
+                <input type="text" id="receiver_name" name="receiver_name" readonly><br><br>
+
+                <label for="receiver_email">Receiver Email:</label>
+                <input type="text" id="receiver_email" name="receiver_email" readonly><br><br>
+
+                <label for="receiver_phonenumber">Receiver Phone Number:</label>
+                <input type="text" id="receiver_phonenumber" name="receiver_phonenumber" readonly><br><br>
+
+                <label for="transfer_amount">Amount Transferred:</label>
+                <input type="text" id="transfer_amount" name="transfer_amount" readonly><br><br>
+
+                <button type="submit" class="btn btn-primary">Submit</button><br><br>
+            </form>
+
+            <script>
+              window.onload = function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const storedData = localStorage.getItem('dataArray');
+                const dataArray = storedData ? JSON.parse(storedData) : [];
+                const senderFullname = dataArray[0];
+                const senderEmail = dataArray[1];
+                const receiverAccNumber = dataArray[2];
+                const receiverFullname = dataArray[3];
+                const receiverEmail = dataArray[4];
+                const receiverPhonenumber = dataArray[5];
+                document.getElementById("sender_name").value = senderFullname;
+                document.getElementById("sender_email").value = senderEmail;
+                document.getElementById("receiver_accnumber").value = receiverAccNumber;
+                document.getElementById("receiver_name").value = receiverFullname;
+                document.getElementById("receiver_email").value = receiverEmail;
+                document.getElementById("receiver_phonenumber").value    = receiverPhonenumber;
+                document.getElementById("transfer_amount").value = urlParams.get("exchangedAmount");
+
+                const ids = ["G135627A", "D153732B", "F126484H", "N267483K"];
+                  // Choose the first ID from the list
+                const selectedId = ids[0];
+                document.getElementById("ID").value = selectedId;
+              };
+          </script>
         </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

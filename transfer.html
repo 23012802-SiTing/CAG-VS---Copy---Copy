@@ -112,7 +112,10 @@
                 receiverPhonenumber
             }).toString();
 
-            window.location.href = "confirm_trans.html?" + queryString;
+            const dataArray = [senderFullname, senderEmail, receiverAccNumber, receiverAccNumber, receiverEmail, receiverPhonenumber];
+            localStorage.setItem('dataArray', JSON.stringify(dataArray));
+
+            window.location.href = "amount_trans.html?" + queryString;
         });
     </script>
 
